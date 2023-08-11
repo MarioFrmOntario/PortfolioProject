@@ -1,0 +1,88 @@
+
+
+/* hamburger menu.  */
+@media screen and (max-width: 1200px) {
+    #primary-nav {
+        display: none;
+    }
+    #mobile-nav {
+        display: flex;
+    }
+}
+
+/*responsiveness for a multitude of parts of the page. Used 768 like you mentioned before*/
+@media screen and (min-width: 768px) {
+    
+    .section_container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: initial;
+      }
+    
+      .image {
+        grid-area: auto;
+      }
+    
+    
+    .projects-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
+    .project-card {
+        width: calc(33.33% - 1.25rem); 
+    }
+  
+.resume-title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .resume-container {
+    max-width: 70vw;
+    min-height: 10vh;
+    min-width: 16.25rem;
+  }
+
+  .job {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  }
+
+  .job-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .company, .job-date {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .company {
+    font-size: 0.9rem;
+    padding: 5px 0.625rem;
+  }
+
+  .job-details {
+    font-size: 0.9rem;
+    padding-left: 1.25rem;
+  }
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+}
+}
+
+  
+
+  @media screen and (min-width: 1200px) {
+    .projects-title {
+        font-size: 2.5rem;
+    }
+  
+    .project-title {
+        font-size: 1.8rem;
+    }
+  }

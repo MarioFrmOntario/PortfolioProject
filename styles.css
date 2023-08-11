@@ -1,0 +1,383 @@
+
+/*Didn't really get a chance to go over the code and make sure that i cut down on any duplicates or combining 
+common elements  due to personal life and lack of time. I couldnt see any redundant code from changing things
+up so often so I think i should be okay there. That being said I really appreciate you 
+giving me a bit of extra time to complete this project. I'm not 100% happy with what i created but overall with 
+the little time I had im please with what i accomplished. Like I mentioned before, your class has been one of
+my favorites this semester so thank you for making learning fun and being an awesome teacher! */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-size: 1rem;
+  scroll-behavior: smooth;
+  background-color: #f4f7fa;
+}
+
+/*custom fonts for everything on the page */
+ .navigation-items ,.dropdown-items,.subtitle,.description,.project-description, .job li,p {
+  font-family: 'Titillium Web', sans-serif;
+  color: #000000;
+  font-weight: bold;
+}
+
+.branding, .title,.action_btns button, .projects-title, .project-title, .resume-title, .job-title,.job-date, .company, a {
+  font-family: 'Kanit', sans-serif;
+  color: #000000;
+  font-weight: bold;
+}
+
+/*nav bar and hamburger. Honestly this ended up taking the longest for me because of how annoying trying to
+do this hamburger to look good in a small screen.*/
+a, .btn {
+  transition: 300ms ease;
+}
+
+nav, .navigation-items {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+}
+
+.navigation-items {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.branding {
+  font-size: 2rem;
+  cursor: default;
+}
+
+#primary-nav{
+  background-color: #B2C9AB;
+}
+/*menu change when screen resolution changes and adds the hamburger menu*/
+#mobile-nav {
+  display: none;
+  background-color: #B2C9AB;
+}
+
+.menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.5rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 0.125rem;
+  background-color: black;
+  transition: 0.3s ease-in-out;
+}
+
+.dropdown-items {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #7C9082;
+  ;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.dropdown-items a {
+  display: block;
+  padding: 0.625rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color:#ffffffff;
+}
+
+.dropdown-items li {
+  list-style: none;
+}
+
+.dropdown-items.open {
+  max-height: 18.75rem;
+}
+
+.menu-toggle.open span:first-child {
+  transform: rotate(45deg) translate(0.625rem, 0.3125rem);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:last-child {
+  transform: rotate(-45deg) translate(0.625rem, -0.3125rem);
+}
+
+.menu-toggle span:first-child {
+  transform: none;
+}
+
+.menu-toggle span:first-child {
+  opacity: 1;
+}
+
+.menu-toggle span:first-child {
+  transform: none;
+}
+
+
+/* --------introduction section at the top of the page------------ */
+.section {
+  background-color: #E8DDB5;
+}
+
+.section_container {
+  min-height: 40vh;
+  max-width: 75rem;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.action_btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.action_btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border-radius: 0.625rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire_me, .portfolio{
+  background-color: #B2C9AB;
+  border: 2px solid #3b3b3b;
+  color: #000000;
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 100%;
+}
+
+/* ----------fake resume section---------- */
+
+.resume-section {
+  padding: 1.875rem 0;
+  background-color: #E8DDB5;
+}
+
+.resume-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.resume-container {
+  max-width: 90vw;
+  margin: auto;
+  overflow-x: hidden;  
+}
+
+.job {
+  background-color: #D0C88E;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.3125rem;
+}
+
+.company, .job-date {
+  display: block; 
+  margin: 0.3125rem auto;
+}
+
+.company {
+  background-color: #B2C9AB;
+  padding: 0.1875rem 0.4375rem;
+  border-radius: 0.3125rem;
+  font-size: 0.8rem;
+}
+
+.job-details {
+  padding-left: 0.625rem;
+  margin-top: 0.625rem;
+  
+}
+
+.job-details li {
+  list-style: disc;
+  word-wrap: break-word; 
+  list-style: none;
+}
+
+/*---------Project cards styling  -----------*/
+.projects-section {
+  padding: 2.5rem 0;
+  background-color: #EDEEC0;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-card {
+  background-color: #D0C88E;
+  padding: 15px;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 15px #000000;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-image {
+  max-width: 100%;
+  border-radius: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.625rem;
+}
+
+.project-description {
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000000;
+  background-color: #B2C9AB;
+  padding: 0.625rem 1.25rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.project-link:hover {
+  background-color: #000000;
+}
+
+/*---------Footer styling and shaping -----------*/
+
+.footer {
+  background-color: #B2C9AB;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  color: #ecf0f1;
+  font-size: 0.875rem;
+}
+
+.footer-socials {
+  display: flex; 
+  margin-top: 0.5rem;
+}
+
+.footer-socials a {
+  margin: 0 0.5rem; 
+}
+
+.footer-socials img {
+  width: 1.5rem; 
+  height: 1.5rem; 
+  transition: opacity 0.3s; 
+}
+
+.footer-socials a:hover img {
+  opacity: 0.7; 
+  color: #ecf0f1;
+}
